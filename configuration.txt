@@ -1,0 +1,48 @@
+#######
+#
+# Configuration file for the TIBCO queues monitoring code.
+#
+#######
+
+# Alert check interval in milliseconds. This should not be less than 5000ms. Defaults to 10000ms if less than 5000ms.
+chk_interval=5000
+
+# Pending message levels internal and external. Internal triggers an alert to the internal team and external triggers an alert to everyone.
+# The BWPM pending message level is set separately. It does only triggers an alert to the internal team.
+# Internal
+int_pending_msg_level=50
+# External
+ext_pending_msg_level=1000
+# BWPM
+bwpm_pending_msg_level=1000
+# CUSTOM LOGGING QUEUE
+custom_logging_queue_pending_msg_level=100000
+# ELASTIC SEARCH LOGGING QUEUE
+elastic_logging_queue_pending_msg_level=1000
+
+# Publishing queue to be ignored.
+publishing_queue=tibco.ac.productmodel.queue
+
+# Add phone numbers to receive the SMS here (separated by commas), internal phone numbers for the internal team and external for everyone.
+internal_phone_numbers=07035382411,09084610680,09092000005
+external_phone_numbers=07035382411,09084610680,09092000005
+
+# Address of the sender (Note that this must also be configured on the SMSC server for the SMS to be delivered).
+from_address=Incidnt_Rpt
+
+# SMS Gateway URL
+sms_gateway_url=http://10.160.176.42:13013/cgi-bin/sendsms
+
+# EMS Home
+ems_home=/appl/tibco/ems/7.0
+
+# EMS server connection url
+biz_server=tcp://lgems1a:2122,tcp://lgems1b:2122
+aud_server=tcp://lgems1a:3122,tcp://lgems1b:3122
+
+# EMS connection details
+username=acn
+password=acn
+
+# Script to execute
+script=rtl.txt
